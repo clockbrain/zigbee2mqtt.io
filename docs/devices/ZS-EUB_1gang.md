@@ -26,6 +26,9 @@ pageClass: device-page
 ## Notes
 
 This device does not act as a Zigbee router, even when the optional neutral connection is used. In addition the vendor does not provide a firmware update to enable the router functionality.
+
+### Pairing
+Press and hold the switch for 7 seconds, untill the indecator on the switch falshes fast. After about 3 seconds pairing should be complete
 <!-- Notes END: Do not edit below this line -->
 
 
@@ -50,7 +53,7 @@ Support depends on the switch firmware. Some devices might require both `on_time
 Examples : `{"state" : "ON", "on_time": 300}`, `{"state" : "ON", "on_time": 300, "off_wait_time": 120}`.
 
 ### Power-on behavior (enum)
-Controls the behavior when the device is powered on after power loss. If you get an `UNSUPPORTED_ATTRIBUTE` error, the device does not support it..
+Controls the behavior when the device is powered on after power loss.
 Value can be found in the published state on the `power_on_behavior` property.
 To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/get` with payload `{"power_on_behavior": ""}`.
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"power_on_behavior": NEW_VALUE}`.

@@ -20,7 +20,7 @@ pageClass: device-page
 | Description | Multiprise with 4 AC outlets and 2 USB super charging ports (16A) |
 | Exposes | switch (state), power_on_behavior, linkquality |
 | Picture | ![Tuya E220-KR4N0Z0-HA](https://www.zigbee2mqtt.io/images/devices/E220-KR4N0Z0-HA.png) |
-| White-label | LEELKI WP33-EU |
+| White-label | LELLKI WP33-EU |
 
 
 <!-- Notes BEGIN: You can edit here. Add "## Notes" headline if not already present. -->
@@ -94,7 +94,7 @@ Support depends on the switch firmware. Some devices might require both `on_time
 Examples : `{"state" : "ON", "on_time": 300}`, `{"state" : "ON", "on_time": 300, "off_wait_time": 120}`.
 
 ### Power-on behavior (enum)
-Controls the behavior when the device is powered on after power loss. If you get an `UNSUPPORTED_ATTRIBUTE` error, the device does not support it..
+Controls the behavior when the device is powered on after power loss.
 Value can be found in the published state on the `power_on_behavior` property.
 To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/get` with payload `{"power_on_behavior": ""}`.
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"power_on_behavior": NEW_VALUE}`.

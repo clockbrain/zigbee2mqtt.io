@@ -23,8 +23,15 @@ pageClass: device-page
 
 
 <!-- Notes BEGIN: You can edit here. Add "## Notes" headline if not already present. -->
+## Notes
 
+### Pairing
+Press and hold the button on device for 5 seconds to reset the device and enter pairing mode.
 
+### Device mode
+The device supports two modes for the connected external switch: rocker switch mode (which is the default state after pairing) and push button mode.
+
+The mode can be changed by short-pressing the button on the device 3 times. The device will indicate the change by flashing the LED 3 times.
 <!-- Notes END: Do not edit below this line -->
 
 
@@ -52,7 +59,7 @@ Support depends on the switch firmware. Some devices might require both `on_time
 Examples : `{"state" : "ON", "on_time": 300}`, `{"state" : "ON", "on_time": 300, "off_wait_time": 120}`.
 
 ### Power-on behavior (enum)
-Controls the behavior when the device is powered on after power loss. If you get an `UNSUPPORTED_ATTRIBUTE` error, the device does not support it..
+Controls the behavior when the device is powered on after power loss.
 Value can be found in the published state on the `power_on_behavior` property.
 To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/get` with payload `{"power_on_behavior": ""}`.
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"power_on_behavior": NEW_VALUE}`.

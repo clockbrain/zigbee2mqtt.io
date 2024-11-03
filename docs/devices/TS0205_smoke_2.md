@@ -18,37 +18,21 @@ pageClass: device-page
 | Model | TS0205_smoke_2  |
 | Vendor  | [Tuya](/supported-devices/#v=Tuya)  |
 | Description | Smoke sensor |
-| Exposes | smoke, battery_low, tamper, battery, linkquality |
+| Exposes | battery, smoke, tamper, linkquality |
 | Picture | ![Tuya TS0205_smoke_2](https://www.zigbee2mqtt.io/images/devices/TS0205_smoke_2.png) |
 
 
 <!-- Notes BEGIN: You can edit here. Add "## Notes" headline if not already present. -->
+## Notes
 
-
+### Pairing
+Press the reset button on the side for about 5 seconds until the green led starts blinking. Release the button and it should pair - on successful pairing the LED will light up solid green for a few seconds and then turn off.
 <!-- Notes END: Do not edit below this line -->
 
 
 
 
 ## Exposes
-
-### Smoke (binary)
-Indicates whether the device detected smoke.
-Value can be found in the published state on the `smoke` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-If value equals `true` smoke is ON, if `false` OFF.
-
-### Battery low (binary)
-Indicates if the battery of this device is almost empty.
-Value can be found in the published state on the `battery_low` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-If value equals `true` battery low is ON, if `false` OFF.
-
-### Tamper (binary)
-Indicates whether the device is tampered.
-Value can be found in the published state on the `tamper` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-If value equals `true` tamper is ON, if `false` OFF.
 
 ### Battery (numeric)
 Remaining battery in %.
@@ -57,6 +41,18 @@ To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME
 It's not possible to write (`/set`) this value.
 The minimal value is `0` and the maximum value is `100`.
 The unit of this value is `%`.
+
+### Smoke (binary)
+Indicates whether the device detected smoke.
+Value can be found in the published state on the `smoke` property.
+It's not possible to read (`/get`) or write (`/set`) this value.
+If value equals `true` smoke is ON, if `false` OFF.
+
+### Tamper (binary)
+Indicates whether the device is tampered.
+Value can be found in the published state on the `tamper` property.
+It's not possible to read (`/get`) or write (`/set`) this value.
+If value equals `true` tamper is ON, if `false` OFF.
 
 ### Linkquality (numeric)
 Link quality (signal strength).
