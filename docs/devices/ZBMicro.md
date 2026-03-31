@@ -18,13 +18,31 @@ pageClass: device-page
 | Model | ZBMicro  |
 | Vendor  | [SONOFF](/supported-devices/#v=SONOFF)  |
 | Description | Zigbee USB repeater plug |
-| Exposes | switch (state), power_on_behavior, rf_turbo_mode, inching_control_set, linkquality |
+| Exposes | switch (state), power_on_behavior, rf_turbo_mode, inching_control_set |
 | Picture | ![SONOFF ZBMicro](https://www.zigbee2mqtt.io/images/devices/ZBMicro.png) |
 
 
 <!-- Notes BEGIN: You can edit here. Add "## Notes" headline if not already present. -->
+## Notes
 
+### Information
 
+- [SONOFF knowledge center](https://help.sonoff.tech/docs/zbmicro)
+- Device is a Zigbee router
+
+### Pairing
+
+**Press and hold the button for 5s** to factory reset the device and start pairing.  
+The green network indicator will slowly flash until it connects.
+
+### Issues
+
+#### Network spam  
+  
+The device does not automatically clear stale entries from its routing table.  
+As a result, it might broadcast unnecessary *Network address requests*.  
+This happens when you remove one of its children without notifying it (e.g. *force-remove*).  
+**Factory reset the device** to solve the issue.
 <!-- Notes END: Do not edit below this line -->
 
 
@@ -71,11 +89,4 @@ Can be set by publishing to `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"inch
 - `inching_control` (binary): Enable/disable inching function. allowed values: `ENABLE` or `DISABLE`
 - `inching_time` (numeric): Delay time for executing a inching action. min value is 0.5, max value is 3599.5, unit is seconds
 - `inching_mode` (binary): Set inching off or inching on mode. allowed values: `ON` or `OFF`
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 
